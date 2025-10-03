@@ -1,0 +1,97 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+nav.navbar {
+  background:linear-gradient( #1f1e14 , rgb(22, 37, 39));
+  opacity: 10px;
+  height: 70px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.nav-logo .icon-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 20px;
+  font-weight: bold;
+  color: #f3ecec;
+  text-decoration: none;
+}
+
+.nav-logo .brand {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #f4ebeb;
+}
+
+.nav-menu {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+}
+
+.nav-menu li {
+  color: #f3ecec;
+  display: flex;
+  align-items: center;
+}
+
+.nav-item {
+  text-decoration: none;
+  color: #fbf6f6;
+  font-size: 16px;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-item:hover {
+  color: #c34b0b; /* Fitness vibe green */
+}
+
+/* Mobile */
+.nav-icon {
+  display: none;
+  cursor: pointer;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .nav-menu {
+    position: absolute;
+    top: 70px;
+    right: -100%;
+    background: #fff;
+    flex-direction: column;
+    width: 220px;
+    height: calc(100vh - 70px);
+    padding: 2rem;
+    gap: 1.5rem;
+    transition: right 0.3s ease-in-out;
+    box-shadow: -2px 0 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .nav-menu.active {
+
+    color: black;
+    right: 0;
+  }
+
+  .nav-icon {
+    display: block;
+    color: white;
+  }
+  .nav-item{
+    color:   #130f0f;;
+  }
+}

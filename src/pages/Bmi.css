@@ -1,0 +1,158 @@
+/* Main Layout */
+.bmi-main-layout {
+  display: flex;
+  justify-content: center; /* Initially center */
+  align-items: flex-start;
+  padding: 30px;
+  gap: 30px;
+  flex-wrap: wrap;
+  transition: all 0.5s ease-in-out;
+}
+/* Ensure form labels are aligned left */
+.bmi-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  text-align: left; /* Add this */
+}
+
+.bmi-container label {
+  font-weight: 500;
+  color: #333;
+  text-align: left; /* Force left alignment */
+  margin-bottom: 5px;
+}
+
+/* Optional: align gender radios nicely */
+.gender-group {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.gender-group label {
+  display: flex;
+  align-items: center;
+  gap: 5px; /* space between radio button and text */
+  text-align: left;
+}
+
+
+/* When result exists → shift form left */
+.bmi-main-layout.with-result {
+  justify-content: flex-start;
+}
+
+/* Form container */
+.bmi-container {
+  flex: 1;
+  min-width: 320px;
+  max-width: 380px;
+  background: #fdfdfd;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0px 4px 15px rgba(0,0,0,0.1);
+  transition: transform 0.6s ease, opacity 0.6s ease;
+}
+
+.bmi-container h2 {
+  text-align: center;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.bmi-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.bmi-container input[type="text"],
+.bmi-container input[type="number"] {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #bbb;
+  transition: border 0.3s;
+}
+
+.bmi-container input:focus {
+  border: 1px solid var(--primary-color);
+  outline: none;
+}
+
+.gender-group {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.bmi-container button {
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  background: var(--secondary-color);
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.bmi-container button:hover {
+  background:var(--primary-color);
+}
+
+/* Result + Chart container */
+.bmi-result-chart {
+  flex: 2;
+  min-width: 400px;
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0px 6px 18px rgba(0,0,0,0.1);
+  animation: fadeInRight 0.7s ease forwards;
+}
+
+.bmi-result {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.bmi-result h2 {
+  color: #333;
+}
+
+.chart-box {
+  background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: inset 0px 3px 8px rgba(0,0,0,0.08);
+}
+
+/* Fade-in from right for chart */
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(60px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .bmi-main-layout,
+  .bmi-main-layout.with-result {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .bmi-result-chart {
+    width: 100%;
+  }
+
+  .chart-box {
+    padding: 15px;
+  }
+}
